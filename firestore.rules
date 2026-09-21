@@ -1,0 +1,43 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Qualquer visitante pode ENVIAR um lead.
+    // Só quem estiver logado (você, no painel) pode LER, EDITAR ou APAGAR.
+    match /leads/{leadId} {
+      allow create: if leadValido(request.resource.data);
+      allow read, update, delete: if request.auth != null;
+    }
+
+    // Nada mais no banco fica exposto.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function leadValido(d) {
+      return d.keys().hasOnly([
+               'nome', 'telefone', 'email', 'empresa',
+               'frente', 'sinal', 'secao', 'faturamento',
+               'contexto', 'brief', 'origem', 'criadoEm'
+             ])
+             && d.nome is string && d.nome.size() > 1 && d.nome.size() < 80
+             && d.telefone is string && d.telefone.size() > 7 && d.telefone.size() < 30
+             && d.origem is string && d.origem.size() < 40
+             && d.criadoEm == request.time
+             && textoCurto(d, 'email', 120)
+             && textoCurto(d, 'empresa', 120)
+             && textoCurto(d, 'frente', 60)
+             && textoCurto(d, 'sinal', 60)
+             && textoCurto(d, 'secao', 60)
+             && textoCurto(d, 'faturamento', 60)
+             && textoCurto(d, 'contexto', 1500)
+             && textoCurto(d, 'brief', 1500);
+    }
+
+    function textoCurto(d, campo, limite) {
+      return !d.keys().hasAny([campo])
+             || (d[campo] is string && d[campo].size() <= limite);
+    }
+  }
+}

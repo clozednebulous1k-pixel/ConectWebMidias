@@ -1,3 +1,13 @@
+# Arquivos de teste e capturas de tela geradas localmente
+_preview/
+
+# Sistema
 Thumbs.db
 .DS_Store
-*.log
+
+# Editores
+.vscode/
+.idea/
+
+# Dependências
+node_modules/

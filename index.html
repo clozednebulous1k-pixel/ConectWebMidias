@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CONECT WEB MÍDIA — Operação digital para marcas em escala</title>
+    <title>CONECT WEB MÍDIA | Operação digital para marcas em escala</title>
     <meta
       name="description"
       content="CONECT WEB MÍDIA: automações, landing pages, CRM, marketing, branding e disparo de mensagem. Consultoria digital com método e clareza."
@@ -18,8 +18,6 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div class="cursor" aria-hidden="true"><span></span></div>
-
     <div class="preloader" data-preloader>
       <p class="label">CONECT WEB MÍDIA</p>
       <p class="preloader-word">CONECT</p>
@@ -29,17 +27,19 @@
     <div class="spine" aria-hidden="true"><span data-spine></span></div>
 
     <header class="nav-wrap">
-      <nav class="nav-pill" aria-label="Principal">
-        <div class="nav-side nav-left">
+      <nav class="nav-pill" aria-label="Principal" data-nav-pill>
+        <div class="nav-side nav-left" data-nav-left>
           <a class="nav-link" href="#servicos">Serviços</a>
-          <a class="nav-link" href="#metodo">Método</a>
+          <a class="nav-link" href="#metodo">Processo</a>
         </div>
-        <a class="nav-logo" href="#topo" aria-label="CONECT WEB MÍDIA — início">
-          <img src="./assets/conect-logo.png" alt="Logo CONECT WEB MÍDIA" />
+        <a class="nav-logo" href="#topo" aria-label="CONECT WEB MÍDIA | início">
+          <span class="nav-tip nav-tip-l" aria-hidden="true"></span>
+          <span class="nav-w">W</span>
+          <span class="nav-tip nav-tip-r" aria-hidden="true"></span>
         </a>
-        <div class="nav-side nav-right">
-          <a class="nav-link" href="#trabalho">Trabalho</a>
-          <a class="nav-link nav-cta" href="#contato">Contato</a>
+        <div class="nav-side nav-right" data-nav-right>
+          <a class="nav-link" href="#automacoes">Automações</a>
+          <a class="nav-link" href="#contato">Contato</a>
           <button class="nav-toggle" type="button" aria-label="Abrir menu" data-menu-toggle>
             <span></span><span></span>
           </button>
@@ -49,258 +49,693 @@
 
     <div class="mobile-menu" data-mobile-menu>
       <a href="#servicos">Serviços</a>
-      <a href="#metodo">Método</a>
+      <a href="#metodo">Processo</a>
+      <a href="#automacoes">Automações</a>
       <a href="#trabalho">Trabalho</a>
       <a href="#contato">Contato</a>
+      <button class="menu-admin" type="button" data-open-admin>Login admin</button>
     </div>
 
     <main id="topo">
       <section class="hero">
         <div class="hero-video">
           <video autoplay muted loop playsinline poster="">
-            <source src="./assets/video/hero.mp4" type="video/mp4" />
+            <source src="./assets/video/tech.mp4" type="video/mp4" />
           </video>
           <div class="hero-veil"></div>
         </div>
         <div class="hero-inner">
           <p class="label reveal">Consultoria digital</p>
           <h1 class="hero-title">
-            <span class="line"><span>Operação</span></span>
-            <span class="line"><span>com clareza</span></span>
-            <span class="line italic"><span>para marcas</span></span>
-            <span class="line"><span>em escala.</span></span>
+            <span class="line"><span>CONECT</span></span>
           </h1>
+          <p class="hero-tagline reveal">Sua empresa sempre disponível, 24 horas por dia.</p>
           <p class="hero-lead reveal">
             Automações, landing pages, CRM, marketing, branding e disparo de
-            mensagem — um sistema comercial, sem ruído.
+            mensagem. Um sistema comercial, sem ruído.
           </p>
           <div class="hero-actions reveal">
-            <a class="btn" href="#contato">Agendar conversa</a>
-            <a class="btn ghost" href="#servicos">Ver oferta</a>
+            <button class="btn" type="button" data-open-diag>Solicitar diagnóstico</button>
+            <button class="btn ghost" type="button" data-open-lead data-ctx="Hero">Quero implementar na minha empresa</button>
+            <a class="btn ghost" href="https://wa.me/5511952025568?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20CONECT%20WEB%20M%C3%8DDIA%20e%20quero%20falar%20sobre%20automa%C3%A7%C3%A3o." target="_blank" rel="noopener">
+              Falar no WhatsApp
+            </a>
           </div>
-        </div>
-        <div class="hero-aside reveal">
-          <p class="label">Em operação</p>
-          <ul class="stat-list">
-            <li><strong data-count="36">0</strong><span>marcas</span></li>
-            <li><strong data-count="120">0</strong><span>páginas</span></li>
-            <li><strong data-count="48">0</strong><span>fluxos</span></li>
-          </ul>
+          <ol class="hero-flow reveal" aria-label="Processo em operação">
+            <li><a href="#metodo">Diagnóstico</a></li>
+            <li><a href="#metodo">Arquitetura</a></li>
+            <li><a href="#servicos">Sistema</a></li>
+            <li><a href="#metodo">Disparo</a></li>
+            <li><a href="#metodo">Ajuste</a></li>
+          </ol>
         </div>
       </section>
 
       <section class="about bridge" id="estudio">
-        <div class="chapter"><span>01</span> Estúdio</div>
-        <div class="about-grid">
-          <div class="about-copy">
-            <h2>Não entregamos peças soltas. Entregamos a operação.</h2>
-            <p>
-              A CONECT WEB MÍDIA entra quando a marca precisa de presença,
-              processo e conversão no mesmo desenho: da mensagem ao CRM, da
-              página ao disparo, da identidade ao funil.
-            </p>
-            <p>
-              Linguagem de consultoria. Ritmo de estúdio. Cada seção do trabalho
-              se conecta à seguinte — para o comercial não depender de planilha
-              e memória.
-            </p>
+        <div class="section-head">
+          <div class="chapter"><span>01</span> Agente</div>
+          <h2>Você já pensou em ter um agente respondendo por você?</h2>
+          <p>
+            Aqui é possível. Um agente treinado com as informações da sua
+            empresa atende, responde e registra o cliente sozinho, 24 horas
+            por dia, enquanto você cuida do resto.
+          </p>
+        </div>
+
+        <ul class="pain-list">
+          <li>
+            <span class="pain-x" aria-hidden="true">✕</span>
+            <p>O cliente manda mensagem às 23h40. Você responde no dia seguinte e ele já fechou com o concorrente.</p>
+          </li>
+          <li>
+            <span class="pain-x" aria-hidden="true">✕</span>
+            <p>Seu time repete a mesma pergunta quarenta vezes por dia: preço, prazo, endereço, forma de pagamento.</p>
+          </li>
+          <li>
+            <span class="pain-x" aria-hidden="true">✕</span>
+            <p>O contato fica perdido no WhatsApp. Ninguém sabe quantas pessoas chamaram no mês nem quantas compraram.</p>
+          </li>
+        </ul>
+
+        <div class="board" data-board>
+          <div class="board-bar">
+            <span class="board-dot" aria-hidden="true"></span>
+            <p class="label">Fluxo do agente, ao vivo</p>
           </div>
-          <figure class="media-frame reveal-media">
-            <video autoplay muted loop playsinline>
-              <source src="./assets/video/office.mp4" type="video/mp4" />
-            </video>
-            <figcaption class="label">Ambiente de trabalho — operação contínua</figcaption>
-          </figure>
+
+          <div class="board-grid">
+            <article class="node node-b" data-node>
+              <header>
+                <span class="node-ico" aria-hidden="true">DB</span>
+                <div>
+                  <h3>Empresa</h3>
+                  <p class="node-sub">Base de conhecimento</p>
+                </div>
+              </header>
+              <p class="node-txt">
+                Preço, prazo, catálogo, agenda e regras de atendimento. É o que o
+                agente estuda para responder igual ao seu melhor vendedor.
+              </p>
+              <span class="port port-b" aria-hidden="true"></span>
+            </article>
+
+            <div class="wire wire-v" data-wire aria-hidden="true"><i></i></div>
+
+            <article class="node node-a" data-node>
+              <header>
+                <span class="node-ico" aria-hidden="true">IN</span>
+                <div>
+                  <h3>Cliente</h3>
+                  <p class="node-sub">WhatsApp, site e Instagram</p>
+                </div>
+              </header>
+              <p class="node-txt">
+                A pessoa chama por qualquer canal. Esse é o gatilho: tudo começa
+                aqui, a qualquer hora do dia.
+              </p>
+              <span class="port port-r" aria-hidden="true"></span>
+            </article>
+
+            <div class="wire wire-h wire-h1" data-wire aria-hidden="true"><i></i></div>
+
+            <article class="node node-c is-core" data-node>
+              <header>
+                <span class="node-ico" aria-hidden="true">AI</span>
+                <div>
+                  <h3>Agente</h3>
+                  <p class="node-sub">Responde e qualifica</p>
+                </div>
+              </header>
+              <p class="node-txt">
+                Entende a pergunta, responde na hora com o tom da sua marca,
+                pergunta o que falta e decide: vende, agenda ou chama o humano.
+              </p>
+              <span class="port port-l" aria-hidden="true"></span>
+              <span class="port port-r" aria-hidden="true"></span>
+              <span class="port port-t" aria-hidden="true"></span>
+            </article>
+
+            <div class="wire wire-h wire-h2" data-wire aria-hidden="true"><i></i></div>
+
+            <article class="node node-d" data-node>
+              <header>
+                <span class="node-ico" aria-hidden="true">CRM</span>
+                <div>
+                  <h3>Painel</h3>
+                  <p class="node-sub">Clientes registrados</p>
+                </div>
+              </header>
+              <ul class="node-feed" data-feed>
+                <li class="feed-head"><span>Cliente</span><span>Status</span></li>
+              </ul>
+              <span class="port port-l" aria-hidden="true"></span>
+            </article>
+          </div>
+
+          <p class="board-note">
+            Cada bloco é uma peça real do sistema. Ligamos todas para você, e
+            você acompanha tudo por um painel simples, no celular ou no
+            computador.
+          </p>
+        </div>
+
+        <div class="about-cards">
+          <article>
+            <span>01</span>
+            <h3>Responde em segundos</h3>
+            <p>Madrugada, domingo e feriado. O cliente é atendido na hora em que ele decidiu comprar.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Fala como a sua empresa</h3>
+            <p>O agente usa o seu catálogo, o seu preço e o seu tom. Se não souber algo, ele passa para uma pessoa.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Registra tudo</h3>
+            <p>Cada conversa vira um contato no painel, com nome, interesse e status. Você para de perder gente no meio.</p>
+          </article>
+        </div>
+
+        <div class="section-cta">
+          <button class="btn" type="button" data-open-lead data-ctx="Agente de atendimento">
+            Quero implementar isso na minha empresa
+          </button>
         </div>
       </section>
 
       <section class="services" id="servicos">
-        <div class="chapter"><span>02</span> Oferta</div>
-        <div class="services-head">
-          <h2>Seis frentes. Uma malha comercial.</h2>
-          <p>Passe pelos serviços — o vídeo e o detalhe acompanham a escolha.</p>
+        <div class="section-head">
+          <div class="chapter"><span>02</span> Oferta</div>
+          <h2>Nove frentes. Uma malha comercial.</h2>
+          <p>Do anúncio no Facebook até o vendedor fechando no WhatsApp, tudo no mesmo sistema.</p>
         </div>
-        <div class="services-layout">
-          <div class="services-list" role="tablist">
-            <button class="service-item is-active" role="tab" aria-selected="true" data-service="0">
-              <span class="num">01</span>
-              <span class="name">Automações</span>
-              <span class="body">Fluxos, integrações e operação que roda sem o time travar.</span>
-            </button>
-            <button class="service-item" role="tab" aria-selected="false" data-service="1">
-              <span class="num">02</span>
-              <span class="name">Landing pages</span>
-              <span class="body">Páginas de campanha com narrativa, performance e captura.</span>
-            </button>
-            <button class="service-item" role="tab" aria-selected="false" data-service="2">
-              <span class="num">03</span>
-              <span class="name">CRM</span>
-              <span class="body">Pipeline, follow-up e dado comercial em um só lugar.</span>
-            </button>
-            <button class="service-item" role="tab" aria-selected="false" data-service="3">
-              <span class="num">04</span>
-              <span class="name">Marketing</span>
-              <span class="body">Mídia, conteúdo e funil com métrica — não com volume vazio.</span>
-            </button>
-            <button class="service-item" role="tab" aria-selected="false" data-service="4">
-              <span class="num">05</span>
-              <span class="name">Branding</span>
-              <span class="body">Identidade verbal e visual para a marca ser reconhecida.</span>
-            </button>
-            <button class="service-item" role="tab" aria-selected="false" data-service="5">
-              <span class="num">06</span>
-              <span class="name">Disparo de mensagem</span>
-              <span class="body">WhatsApp, e-mail e SMS em escala, com cadência e template.</span>
-            </button>
+        <div class="service-grid">
+          <article class="service-card">
+            <span>01</span>
+            <h3>Estratégia</h3>
+            <p>Oferta, público e meta de venda definidos antes de gastar o primeiro real.</p>
+          </article>
+          <article class="service-card">
+            <span>02</span>
+            <h3>Tráfego pago</h3>
+            <p>Facebook Ads, Instagram e Google: campanha, criativo e verba com leitura diária.</p>
+          </article>
+          <article class="service-card">
+            <span>03</span>
+            <h3>Landing pages</h3>
+            <p>Páginas de campanha com narrativa, performance e captura ligada ao CRM.</p>
+          </article>
+          <article class="service-card">
+            <span>04</span>
+            <h3>Formulário</h3>
+            <p>Captura curta, sem fricção, que cai direto no pipeline e no WhatsApp.</p>
+          </article>
+          <article class="service-card">
+            <span>05</span>
+            <h3>Automações</h3>
+            <p>Fluxos, integrações e operação que roda sem o time travar.</p>
+          </article>
+          <article class="service-card">
+            <span>06</span>
+            <h3>CRM</h3>
+            <p>Pipeline, follow-up e dado comercial em um só lugar.</p>
+          </article>
+          <article class="service-card">
+            <span>07</span>
+            <h3>Disparo</h3>
+            <p>WhatsApp, e-mail e SMS em escala, com cadência e template.</p>
+          </article>
+          <article class="service-card">
+            <span>08</span>
+            <h3>Branding</h3>
+            <p>Identidade verbal e visual para a marca ser reconhecida no funil inteiro.</p>
+          </article>
+          <article class="service-card">
+            <span>09</span>
+            <h3>Dados</h3>
+            <p>Pixel, evento e relatório simples: você vê quanto custou cada venda.</p>
+          </article>
+        </div>
+
+        <div class="mesh">
+          <div class="mesh-head">
+            <p class="label">Tudo conectado</p>
+            <h3>Uma verba entra no anúncio. Uma venda sai no fim.</h3>
+            <p class="mesh-lead">
+              A maioria das empresas compra cada peça de um fornecedor diferente
+              e nada conversa. Veja como fica quando a corrente é uma só: siga o
+              caminho do dinheiro, do primeiro anúncio até o cliente registrado
+              no painel.
+            </p>
           </div>
-          <div class="services-stage">
-            <div class="stage-videos">
-              <video class="is-on" data-media="0" autoplay muted loop playsinline>
-                <source src="./assets/video/desk.mp4" type="video/mp4" />
-              </video>
-              <video data-media="1" muted loop playsinline>
-                <source src="./assets/video/office.mp4" type="video/mp4" />
-              </video>
-              <video data-media="2" muted loop playsinline>
-                <source src="./assets/video/meeting.mp4" type="video/mp4" />
-              </video>
-              <video data-media="3" muted loop playsinline>
-                <source src="./assets/video/meeting.mp4" type="video/mp4" />
-              </video>
-              <video data-media="4" muted loop playsinline>
-                <source src="./assets/video/hero.mp4" type="video/mp4" />
-              </video>
-              <video data-media="5" muted loop playsinline>
-                <source src="./assets/video/desk.mp4" type="video/mp4" />
-              </video>
+
+          <div class="board board-flow" data-flow>
+            <div class="board-bar">
+              <span class="board-dot" aria-hidden="true"></span>
+              <p class="label">Do anúncio à venda, passo a passo</p>
             </div>
-            <div class="msg-stack" data-messages aria-hidden="true">
-              <span>Sua proposta está pronta.</span>
-              <span>Lembrete: reunião às 10h.</span>
-              <span>Olá — o material saiu hoje.</span>
+
+            <div class="board-grid flow-grid">
+              <article class="node f1" data-node>
+                <header>
+                  <span class="node-ico" aria-hidden="true">ADS</span>
+                  <div>
+                    <h3>Tráfego pago</h3>
+                    <p class="node-sub">Facebook e Instagram Ads</p>
+                  </div>
+                </header>
+                <p class="node-txt">
+                  Você coloca uma verba, por exemplo R$ 50 por dia. O anúncio
+                  aparece só para quem tem perfil de comprar de você: cidade,
+                  idade, interesse e comportamento.
+                </p>
+                <span class="port port-r" aria-hidden="true"></span>
+              </article>
+
+              <div class="wire wire-h fw1" data-wire aria-hidden="true"><i></i></div>
+
+              <article class="node f2" data-node>
+                <header>
+                  <span class="node-ico" aria-hidden="true">WEB</span>
+                  <div>
+                    <h3>Site e landing</h3>
+                    <p class="node-sub">Onde o clique cai</p>
+                  </div>
+                </header>
+                <p class="node-txt">
+                  A pessoa clica e chega numa página rápida, que explica a
+                  oferta, mostra prova e tem um único caminho: falar com você.
+                </p>
+                <span class="port port-l" aria-hidden="true"></span>
+                <span class="port port-r" aria-hidden="true"></span>
+              </article>
+
+              <div class="wire wire-h fw2" data-wire aria-hidden="true"><i></i></div>
+
+              <article class="node f3" data-node>
+                <header>
+                  <span class="node-ico" aria-hidden="true">FRM</span>
+                  <div>
+                    <h3>Formulário</h3>
+                    <p class="node-sub">Nome e WhatsApp</p>
+                  </div>
+                </header>
+                <p class="node-txt">
+                  Dois campos só. Quanto menos pergunta, mais gente preenche. O
+                  contato entra no sistema no mesmo segundo.
+                </p>
+                <span class="port port-l" aria-hidden="true"></span>
+                <span class="port port-b" aria-hidden="true"></span>
+              </article>
+
+              <div class="wire wire-v fwv" data-wire aria-hidden="true"><i></i></div>
+
+              <article class="node f4" data-node>
+                <header>
+                  <span class="node-ico" aria-hidden="true">BOT</span>
+                  <div>
+                    <h3>Agente no WhatsApp</h3>
+                    <p class="node-sub">Resposta em segundos</p>
+                  </div>
+                </header>
+                <p class="node-txt">
+                  O agente chama a pessoa na hora, tira dúvida, manda preço e
+                  separa quem quer comprar agora de quem está só olhando.
+                </p>
+                <span class="port port-t" aria-hidden="true"></span>
+                <span class="port port-l" aria-hidden="true"></span>
+              </article>
+
+              <div class="wire wire-h wire-back fw3" data-wire aria-hidden="true"><i></i></div>
+
+              <article class="node f5 is-core" data-node>
+                <header>
+                  <span class="node-ico" aria-hidden="true">CRM</span>
+                  <div>
+                    <h3>Painel de clientes</h3>
+                    <p class="node-sub">Todo mundo registrado</p>
+                  </div>
+                </header>
+                <ul class="flow-stats" data-flow-stats>
+                  <li><strong data-stat="312">0</strong><span>cliques</span></li>
+                  <li><strong data-stat="47">0</strong><span>clientes</span></li>
+                  <li><strong data-stat="11">0</strong><span>vendas</span></li>
+                </ul>
+                <p class="node-txt">
+                  Cada pessoa vira uma linha com nome, canal e status. Você abre
+                  o painel e sabe quantos entraram e quantos compraram.
+                </p>
+                <span class="port port-l" aria-hidden="true"></span>
+                <span class="port port-r" aria-hidden="true"></span>
+              </article>
+
+              <div class="wire wire-h wire-back fw4" data-wire aria-hidden="true"><i></i></div>
+
+              <article class="node f6" data-node>
+                <header>
+                  <span class="node-ico" aria-hidden="true">SND</span>
+                  <div>
+                    <h3>Disparo e dados</h3>
+                    <p class="node-sub">Quem não comprou volta</p>
+                  </div>
+                </header>
+                <p class="node-txt">
+                  Quem não fechou recebe mensagem depois, com oferta nova. E o
+                  relatório mostra quanto custou cada cliente e cada venda.
+                </p>
+                <span class="port port-r" aria-hidden="true"></span>
+              </article>
             </div>
+
+            <p class="board-note">
+              Siga a linha: a verba do anúncio vira clique, o clique vira
+              formulário, o formulário vira conversa, a conversa vira registro
+              no painel e o painel mostra se valeu a pena. Nenhuma etapa
+              depende de alguém lembrar de fazer.
+            </p>
           </div>
+
+          <ol class="flow-read">
+            <li>
+              <span class="mesh-num">01</span>
+              <p><strong>Investe:</strong> R$ 50 por dia no Facebook Ads, mirando só o seu público.</p>
+            </li>
+            <li>
+              <span class="mesh-num">02</span>
+              <p><strong>Atrai:</strong> o anúncio leva a pessoa para a sua página, não para um perfil parado.</p>
+            </li>
+            <li>
+              <span class="mesh-num">03</span>
+              <p><strong>Captura:</strong> nome e WhatsApp em dois campos. O lead entra no sistema na hora.</p>
+            </li>
+            <li>
+              <span class="mesh-num">04</span>
+              <p><strong>Atende:</strong> o agente responde em segundos e qualifica antes de gastar o tempo do vendedor.</p>
+            </li>
+            <li>
+              <span class="mesh-num">05</span>
+              <p><strong>Registra:</strong> todo contato aparece no painel com status, sem planilha e sem perder ninguém.</p>
+            </li>
+            <li>
+              <span class="mesh-num">06</span>
+              <p><strong>Recupera e mede:</strong> quem não comprou volta no disparo, e você vê o custo real por venda.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="section-cta">
+          <button class="btn" type="button" data-open-lead data-ctx="Tráfego pago e funil completo">
+            Quero implementar isso na minha empresa
+          </button>
+        </div>
+      </section>
+
+      <section class="autos" id="automacoes">
+        <div class="section-head">
+          <div class="chapter"><span>03</span> Automações</div>
+          <h2>O que é uma automação, na prática.</h2>
+          <p>
+            Automação é uma regra que trabalha por você: quando algo acontece, o
+            sistema executa o próximo passo sozinho. Sem você lembrar, sem
+            planilha, sem lead esquecido.
+          </p>
+        </div>
+
+        <div class="auto-anatomy">
+          <div class="anat-step">
+            <span class="anat-tag">Gatilho</span>
+            <h3>Algo acontece</h3>
+            <p>O cliente preenche o formulário, manda mensagem ou abandona o carrinho.</p>
+          </div>
+          <div class="anat-arrow" aria-hidden="true"></div>
+          <div class="anat-step">
+            <span class="anat-tag">Condição</span>
+            <h3>O sistema decide</h3>
+            <p>É lead quente? Já é cliente? Veio de qual campanha? A regra escolhe o caminho.</p>
+          </div>
+          <div class="anat-arrow" aria-hidden="true"></div>
+          <div class="anat-step">
+            <span class="anat-tag">Ação</span>
+            <h3>A tarefa é feita</h3>
+            <p>Manda o WhatsApp, cria o card no CRM, avisa o vendedor, agenda o retorno.</p>
+          </div>
+        </div>
+
+        <div class="auto-live" data-autoflow>
+          <div class="auto-live-head">
+            <p class="label">Simulação ao vivo</p>
+            <h3 data-flow-title>Lead novo no formulário</h3>
+          </div>
+          <ol class="auto-live-steps" data-flow-steps>
+            <li><span></span><p>Cliente envia o formulário às 23h40</p></li>
+            <li><span></span><p>Sistema identifica: orçamento alto, campanha de busca</p></li>
+            <li><span></span><p>WhatsApp automático confirma o recebimento em 4 segundos</p></li>
+            <li><span></span><p>Card criado no CRM na coluna "Atender primeiro"</p></li>
+            <li><span></span><p>Vendedor recebe alerta às 8h com o histórico pronto</p></li>
+          </ol>
+        </div>
+
+        <div class="cases-head">
+          <h3>Exemplos reais de empresas</h3>
+          <p>Casos públicos de automação que já viraram padrão de mercado.</p>
+        </div>
+        <div class="case-grid">
+          <article class="case-card">
+            <p class="case-brand">Magazine Luiza</p>
+            <p class="label">Atendimento e vendas</p>
+            <p>
+              A assistente virtual "Lu" responde dúvidas de pedido, rastreio e
+              troca sem fila humana. O time só entra quando o caso é complexo.
+            </p>
+            <p class="case-take"><strong>O que copiar:</strong> responder as 10 perguntas repetidas antes de gastar time humano.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-brand">iFood</p>
+            <p class="label">Pedido e logística</p>
+            <p>
+              Do pedido ao entregador, tudo é roteado por regra: status muda
+              sozinho e o cliente recebe aviso a cada etapa.
+            </p>
+            <p class="case-take"><strong>O que copiar:</strong> avisar o cliente em cada mudança de status, sem ninguém digitar.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-brand">Nubank</p>
+            <p class="label">Onboarding</p>
+            <p>
+              Abertura de conta, análise e comunicação acontecem em fluxo
+              automático, com a pessoa acompanhando cada passo pelo app.
+            </p>
+            <p class="case-take"><strong>O que copiar:</strong> transformar o cadastro em uma esteira com retorno visível.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-brand">Amazon</p>
+            <p class="label">Recompra</p>
+            <p>
+              Recomendação e e-mail de reposição disparam a partir do
+              comportamento de compra, não de um envio manual.
+            </p>
+            <p class="case-take"><strong>O que copiar:</strong> usar o histórico do cliente para gerar a próxima oferta sozinho.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-brand">Netflix</p>
+            <p class="label">Retenção</p>
+            <p>
+              Aviso de cobrança, falha de pagamento e sugestão de conteúdo são
+              automáticos, o que reduz cancelamento silencioso.
+            </p>
+            <p class="case-take"><strong>O que copiar:</strong> agir antes do cliente sumir, não depois.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-brand">Meta (Facebook Ads)</p>
+            <p class="label">Tráfego pago</p>
+            <p>
+              Campanhas de geração de leads entregam o formulário dentro do
+              próprio Facebook e Instagram, e o contato vai direto para o CRM
+              por integração.
+            </p>
+            <p class="case-take"><strong>O que copiar:</strong> ligar o anúncio ao CRM para nenhum lead pago morrer em planilha.</p>
+          </article>
+          <article class="case-card">
+            <p class="case-brand">Boticário</p>
+            <p class="label">CRM e recompra</p>
+            <p>
+              Base segmentada recebe campanha por perfil e por data de compra,
+              com disparo programado.
+            </p>
+            <p class="case-take"><strong>O que copiar:</strong> falar com cada grupo na hora certa, em vez de um disparo para todos.</p>
+          </article>
+        </div>
+
+        <div class="auto-cta">
+          <p>Quer ver esse mapa aplicado na sua operação?</p>
+          <button class="btn" type="button" data-open-lead data-ctx="Automações">
+            Quero implementar isso na minha empresa
+          </button>
         </div>
       </section>
 
       <section class="method" id="metodo">
-        <div class="chapter"><span>03</span> Método</div>
-        <h2>Do briefing ao ar. Sem silos.</h2>
-        <ol class="method-list">
-          <li>
-            <span class="dot"></span>
-            <span class="num">01</span>
-            <div>
-              <h3>Leitura</h3>
-              <p>Onde o funil trava, o que a marca promete, o que o time aguenta.</p>
-            </div>
-          </li>
-          <li>
-            <span class="dot"></span>
-            <span class="num">02</span>
-            <div>
-              <h3>Arquitetura</h3>
-              <p>Mapa de páginas, CRM, disparos e identidade — antes da execução.</p>
-            </div>
-          </li>
-          <li>
-            <span class="dot"></span>
-            <span class="num">03</span>
-            <div>
-              <h3>Construção</h3>
-              <p>Design, código, fluxos e copy no mesmo ciclo. Uma entrega só.</p>
-            </div>
-          </li>
-          <li>
-            <span class="dot"></span>
-            <span class="num">04</span>
-            <div>
-              <h3>Lançamento</h3>
-              <p>Go-live com tracking, filas de mensagem e handoff operacional.</p>
-            </div>
-          </li>
-          <li>
-            <span class="dot"></span>
-            <span class="num">05</span>
-            <div>
-              <h3>Ajuste</h3>
-              <p>Leitura de dado, novo disparo, nova página. A malha continua.</p>
-            </div>
-          </li>
-        </ol>
+        <div class="section-head">
+          <div class="chapter"><span>04</span> Processo</div>
+          <h2>Do briefing ao ar. Sem silos.</h2>
+          <p>Oito etapas conectadas. Clique em cada uma, o cliente vê o caminho, o prazo e o que sai de cada fase.</p>
+        </div>
+        <div class="process" data-process>
+          <div class="process-track" role="tablist" aria-label="Etapas do processo">
+            <button class="process-node is-on" type="button" role="tab" aria-selected="true" data-step="0">
+              <span class="process-num">01</span>
+              <span>Diagnóstico</span>
+            </button>
+            <button class="process-node" type="button" role="tab" aria-selected="false" data-step="1">
+              <span class="process-num">02</span>
+              <span>Arquitetura</span>
+            </button>
+            <button class="process-node" type="button" role="tab" aria-selected="false" data-step="2">
+              <span class="process-num">03</span>
+              <span>Mensagem</span>
+            </button>
+            <button class="process-node" type="button" role="tab" aria-selected="false" data-step="3">
+              <span class="process-num">04</span>
+              <span>Identidade</span>
+            </button>
+            <button class="process-node" type="button" role="tab" aria-selected="false" data-step="4">
+              <span class="process-num">05</span>
+              <span>Páginas</span>
+            </button>
+            <button class="process-node" type="button" role="tab" aria-selected="false" data-step="5">
+              <span class="process-num">06</span>
+              <span>Sistema</span>
+            </button>
+            <button class="process-node" type="button" role="tab" aria-selected="false" data-step="6">
+              <span class="process-num">07</span>
+              <span>Disparo</span>
+            </button>
+            <button class="process-node" type="button" role="tab" aria-selected="false" data-step="7">
+              <span class="process-num">08</span>
+              <span>Ajuste</span>
+            </button>
+          </div>
+          <div class="process-line" aria-hidden="true"><span data-process-fill></span></div>
+          <article class="process-panel" data-process-panel>
+            <p class="label" data-process-kicker>Etapa 01, 5 a 8 dias</p>
+            <h3 data-process-title>Diagnóstico comercial</h3>
+            <p data-process-text>
+              Onde o funil trava, o que a marca promete, o que o time aguenta.
+              Sem isso, qualquer página ou disparo vira ruído.
+            </p>
+            <ul class="process-out" data-process-out>
+              <li>Mapa do funil atual</li>
+              <li>Gargalos e perdas</li>
+              <li>Prioridade de operação</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="section-cta">
+          <button class="btn" type="button" data-open-lead data-ctx="Processo completo">
+            Quero implementar isso na minha empresa
+          </button>
+        </div>
       </section>
 
       <section class="work" id="trabalho">
-        <div class="chapter"><span>04</span> Trabalho</div>
-        <h2>Recortes da malha.</h2>
+        <div class="section-head">
+          <div class="chapter"><span>05</span> Trabalho</div>
+          <h2>Recortes da malha.</h2>
+          <p>O processo usado em cada marca aparece junto do resultado.</p>
+        </div>
         <div class="work-grid">
-          <article class="work-card">
+          <article class="work-card" tabindex="0">
             <div class="work-media">
               <video autoplay muted loop playsinline>
-                <source src="./assets/video/meeting.mp4" type="video/mp4" />
+                <source src="./assets/video/tech.mp4" type="video/mp4" />
               </video>
+              <div class="work-overlay">
+                <p class="label">Processo</p>
+                <p>Diagnóstico → CRM → automação → disparo WhatsApp</p>
+              </div>
             </div>
             <p class="label">Automação / CRM</p>
             <h3>Atlas Logística</h3>
             <p>Pipeline e WhatsApp no mesmo fluxo. Resposta de 4h para 9 min.</p>
           </article>
-          <article class="work-card">
+          <article class="work-card" tabindex="0">
             <div class="work-media">
               <video autoplay muted loop playsinline>
-                <source src="./assets/video/office.mp4" type="video/mp4" />
+                <source src="./assets/video/tech.mp4" type="video/mp4" />
               </video>
+              <div class="work-overlay">
+                <p class="label">Processo</p>
+                <p>Identidade → mensagem → landing → captura no CRM</p>
+              </div>
             </div>
             <p class="label">Branding / LP</p>
             <h3>Névoa Skincare</h3>
             <p>Identidade e landing de lançamento. Conversão 3,2× no primeiro ciclo.</p>
           </article>
-          <article class="work-card">
+          <article class="work-card" tabindex="0">
             <div class="work-media">
               <video autoplay muted loop playsinline>
-                <source src="./assets/video/desk.mp4" type="video/mp4" />
+                <source src="./assets/video/tech.mp4" type="video/mp4" />
               </video>
+              <div class="work-overlay">
+                <p class="label">Processo</p>
+                <p>Mídia → página → disparo → ajuste semanal</p>
+              </div>
             </div>
             <p class="label">Disparo / Mídia</p>
             <h3>Orbit Desk</h3>
             <p>Campanha, CRM e disparo de mensagem. Um funil, três canais.</p>
           </article>
         </div>
+
+        <div class="section-cta">
+          <button class="btn" type="button" data-open-lead data-ctx="Quero um caso assim">
+            Quero implementar isso na minha empresa
+          </button>
+        </div>
       </section>
 
       <section class="contact" id="contato">
-        <div class="chapter"><span>05</span> Contato</div>
+        <div class="section-head">
+          <div class="chapter"><span>06</span> Contato</div>
+          <h2>Abra um canal com o estúdio.</h2>
+          <p>
+            Conte o que precisa sair: automação, página, CRM, campanha, marca
+            ou disparo. Respondemos com um plano de operação, não com um PDF
+            genérico.
+          </p>
+        </div>
         <div class="contact-grid">
-          <div class="contact-copy">
-            <h2>Abra um canal com o estúdio.</h2>
-            <p>
-              Conte o que precisa sair: automação, página, CRM, campanha, marca
-              ou disparo. Respondemos com um plano de operação, não com um PDF
-              genérico.
-            </p>
-            <ul class="contact-meta">
-              <li>
-                <span class="label">E-mail</span>
-                <a href="mailto:contato@conectwebmidia.com">contato@conectwebmidia.com</a>
-              </li>
-              <li>
-                <span class="label">WhatsApp</span>
-                <a href="https://wa.me/5511999990000" target="_blank" rel="noopener">+55 11 99999-0000</a>
-              </li>
-            </ul>
-          </div>
+          <ul class="contact-meta">
+            <li>
+              <span class="label">E-mail</span>
+              <a href="mailto:contato@conectwebmidia.com">contato@conectwebmidia.com</a>
+            </li>
+            <li>
+              <span class="label">WhatsApp</span>
+              <a href="https://wa.me/5511952025568" target="_blank" rel="noopener">+55 11 95202-5568</a>
+            </li>
+          </ul>
           <form class="contact-form" data-form>
             <label>
-              <span class="label">Nome</span>
+              <span class="label">Nome<i>*</i></span>
               <input type="text" name="nome" required placeholder="Como te chamamos" />
             </label>
             <label>
+              <span class="label">WhatsApp<i>*</i></span>
+              <input type="tel" name="telefone" required placeholder="(11) 90000-0000" />
+            </label>
+            <label>
               <span class="label">E-mail</span>
-              <input type="email" name="email" required placeholder="voce@empresa.com" />
+              <input type="email" name="email" placeholder="voce@empresa.com" />
             </label>
             <label>
               <span class="label">Frente</span>
-              <select name="sinal" required>
+              <select name="sinal">
                 <option value="" disabled selected>O que precisa conectar</option>
+                <option>Tráfego pago (Meta Ads)</option>
                 <option>Automações</option>
                 <option>Landing page</option>
                 <option>CRM</option>
@@ -329,19 +764,196 @@
         </div>
         <nav aria-label="Rodapé">
           <a href="#servicos">Serviços</a>
-          <a href="#metodo">Método</a>
+          <a href="#metodo">Processo</a>
           <a href="#trabalho">Trabalho</a>
           <a href="#contato">Contato</a>
+          <button class="admin-btn" type="button" data-open-admin>
+            <span class="admin-lock" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
+                <path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7" />
+              </svg>
+            </span>
+            Login admin
+          </button>
         </nav>
       </div>
       <p class="footer-word">CONECT</p>
       <div class="footer-bottom">
         <span>© 2026</span>
         <span>WEB MÍDIA</span>
-        <span>São Paulo</span>
+        <button class="admin-link" type="button" data-open-admin>Acesso administrador</button>
       </div>
     </footer>
 
+    <a
+      class="wa-float"
+      href="https://wa.me/5511952025568?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20CONECT%20WEB%20M%C3%8DDIA."
+      target="_blank"
+      rel="noopener"
+      aria-label="Falar no WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.64-1.03-5.12-2.9-6.99A9.82 9.82 0 0 0 12.04 2zm0 18.06h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.81.83-3.03-.2-.31a8.22 8.22 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.23 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.86-.87 2.08 0 1.23.89 2.41 1.01 2.58.13.16 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/>
+      </svg>
+    </a>
+
+    <div class="modal" data-modal="diag" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="diag-title">
+        <button class="modal-x" type="button" data-close-modal aria-label="Fechar">×</button>
+        <p class="label">Diagnóstico gratuito</p>
+        <h3 id="diag-title">Conte onde a operação trava.</h3>
+        <p class="modal-lead">
+          Leva 1 minuto. Devolvemos um mapa do seu funil com os pontos de
+          automação prioritários.
+        </p>
+        <form class="diag-form" data-diag-form>
+          <label>
+            <span class="label">Nome<i>*</i></span>
+            <input type="text" name="nome" required placeholder="Seu nome" />
+          </label>
+          <label>
+            <span class="label">WhatsApp<i>*</i></span>
+            <input type="tel" name="telefone" required placeholder="(11) 90000-0000" />
+          </label>
+          <label>
+            <span class="label">Empresa</span>
+            <input type="text" name="empresa" placeholder="Opcional" />
+          </label>
+          <label>
+            <span class="label">E-mail</span>
+            <input type="email" name="email" placeholder="Opcional" />
+          </label>
+          <label>
+            <span class="label">O que precisa resolver</span>
+            <select name="frente">
+              <option value="" disabled selected>Opcional</option>
+              <option>Tráfego pago (Meta Ads)</option>
+              <option>Automações</option>
+              <option>Landing page</option>
+              <option>CRM</option>
+              <option>Marketing</option>
+              <option>Branding</option>
+              <option>Disparo de mensagem</option>
+              <option>Pacote completo</option>
+            </select>
+          </label>
+          <label>
+            <span class="label">Faturamento mensal</span>
+            <select name="faturamento">
+              <option value="" disabled selected>Opcional</option>
+              <option>Até 20 mil</option>
+              <option>20 a 50 mil</option>
+              <option>50 a 100 mil</option>
+              <option>100 a 300 mil</option>
+              <option>Acima de 300 mil</option>
+            </select>
+          </label>
+          <label class="span-2">
+            <span class="label">Contexto</span>
+            <textarea name="contexto" rows="3" placeholder="O que já existe, o que trava, qual o prazo."></textarea>
+          </label>
+          <p class="form-note span-2">Só nome e WhatsApp são obrigatórios. O resto é opcional.</p>
+          <div class="modal-actions span-2">
+            <button class="btn" type="submit">Enviar diagnóstico</button>
+            <button class="btn ghost" type="button" data-diag-wa>Enviar e abrir WhatsApp</button>
+          </div>
+          <p class="form-ok label span-2" data-diag-ok hidden>
+            Recebido. Retornamos no WhatsApp informado.
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="lead" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-box lead-box" role="dialog" aria-modal="true" aria-labelledby="lead-title">
+        <button class="modal-x" type="button" data-close-modal aria-label="Fechar">×</button>
+        <p class="label">Implantação</p>
+        <h3 id="lead-title">Quero isso na minha empresa</h3>
+        <p class="modal-lead" data-lead-ctx>
+          Deixe seu nome e WhatsApp. A gente chama você e mostra como fica na
+          sua operação.
+        </p>
+        <form class="lead-form" data-lead-form>
+          <label>
+            <span class="label">Nome<i>*</i></span>
+            <input type="text" name="nome" required placeholder="Seu nome" />
+          </label>
+          <label>
+            <span class="label">WhatsApp<i>*</i></span>
+            <input type="tel" name="telefone" required placeholder="(11) 90000-0000" />
+          </label>
+          <input type="hidden" name="secao" data-lead-secao />
+          <div class="modal-actions">
+            <button class="btn" type="submit">Enviar</button>
+            <button class="btn ghost" type="button" data-lead-wa>Enviar e abrir WhatsApp</button>
+          </div>
+          <p class="form-ok label" data-lead-ok hidden>Recebido. Falamos com você em breve.</p>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="admin" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-box admin-box" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+        <button class="modal-x" type="button" data-close-modal aria-label="Fechar">×</button>
+
+        <div data-admin-login>
+          <p class="label">Área restrita</p>
+          <h3 id="admin-title">Login do administrador</h3>
+          <form class="admin-form" data-admin-form>
+            <label>
+              <span class="label">E-mail ou usuário</span>
+              <input type="text" name="user" required autocomplete="username" />
+            </label>
+            <label>
+              <span class="label">Senha</span>
+              <input type="password" name="pass" required autocomplete="current-password" />
+            </label>
+            <button class="btn" type="submit">Entrar</button>
+            <p class="admin-error label" data-admin-error hidden>Usuário ou senha incorretos.</p>
+          </form>
+        </div>
+
+        <div data-admin-panel hidden>
+          <div class="admin-head">
+            <div>
+              <p class="label">Painel do administrador</p>
+              <h3>Leads recebidos</h3>
+              <p class="admin-mode label" data-admin-mode></p>
+            </div>
+            <div class="admin-tools">
+              <button class="btn small" type="button" data-admin-csv>Baixar CSV</button>
+              <button class="btn small ghost" type="button" data-admin-clear>Limpar</button>
+              <button class="btn small ghost" type="button" data-admin-logout>Sair</button>
+            </div>
+          </div>
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Origem</th>
+                  <th>Nome</th>
+                  <th>WhatsApp</th>
+                  <th>Empresa</th>
+                  <th>E-mail</th>
+                  <th>Interesse</th>
+                  <th>Contexto</th>
+                </tr>
+              </thead>
+              <tbody data-admin-rows></tbody>
+            </table>
+          </div>
+          <p class="admin-empty label" data-admin-empty hidden>Nenhum diagnóstico recebido ainda.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/leads.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
