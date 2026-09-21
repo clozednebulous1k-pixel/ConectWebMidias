@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://*.googleapis.com https://www.gstatic.com; base-uri 'self'; form-action 'self'; object-src 'none'"
+    />
     <title>CONECT WEB MÍDIA | Operação digital para marcas em escala</title>
     <meta
       name="description"
@@ -53,7 +58,7 @@
       <a href="#automacoes">Automações</a>
       <a href="#trabalho">Trabalho</a>
       <a href="#contato">Contato</a>
-      <button class="menu-admin" type="button" data-open-admin>Login admin</button>
+      <a class="menu-admin" href="./admin.html" rel="nofollow">Login admin</a>
     </div>
 
     <main id="topo">
@@ -767,7 +772,7 @@
           <a href="#metodo">Processo</a>
           <a href="#trabalho">Trabalho</a>
           <a href="#contato">Contato</a>
-          <button class="admin-btn" type="button" data-open-admin>
+          <a class="admin-btn" href="./admin.html" rel="nofollow">
             <span class="admin-lock" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="4.5" y="10.5" width="15" height="10" rx="2" />
@@ -775,14 +780,14 @@
               </svg>
             </span>
             Login admin
-          </button>
+          </a>
         </nav>
       </div>
       <p class="footer-word">CONECT</p>
       <div class="footer-bottom">
         <span>© 2026</span>
         <span>WEB MÍDIA</span>
-        <button class="admin-link" type="button" data-open-admin>Acesso administrador</button>
+        <a class="admin-link" href="./admin.html" rel="nofollow">Acesso administrador</a>
       </div>
     </footer>
 
@@ -892,63 +897,6 @@
           </div>
           <p class="form-ok label" data-lead-ok hidden>Recebido. Falamos com você em breve.</p>
         </form>
-      </div>
-    </div>
-
-    <div class="modal" data-modal="admin" hidden>
-      <div class="modal-backdrop" data-close-modal></div>
-      <div class="modal-box admin-box" role="dialog" aria-modal="true" aria-labelledby="admin-title">
-        <button class="modal-x" type="button" data-close-modal aria-label="Fechar">×</button>
-
-        <div data-admin-login>
-          <p class="label">Área restrita</p>
-          <h3 id="admin-title">Login do administrador</h3>
-          <form class="admin-form" data-admin-form>
-            <label>
-              <span class="label">E-mail ou usuário</span>
-              <input type="text" name="user" required autocomplete="username" />
-            </label>
-            <label>
-              <span class="label">Senha</span>
-              <input type="password" name="pass" required autocomplete="current-password" />
-            </label>
-            <button class="btn" type="submit">Entrar</button>
-            <p class="admin-error label" data-admin-error hidden>Usuário ou senha incorretos.</p>
-          </form>
-        </div>
-
-        <div data-admin-panel hidden>
-          <div class="admin-head">
-            <div>
-              <p class="label">Painel do administrador</p>
-              <h3>Leads recebidos</h3>
-              <p class="admin-mode label" data-admin-mode></p>
-            </div>
-            <div class="admin-tools">
-              <button class="btn small" type="button" data-admin-csv>Baixar CSV</button>
-              <button class="btn small ghost" type="button" data-admin-clear>Limpar</button>
-              <button class="btn small ghost" type="button" data-admin-logout>Sair</button>
-            </div>
-          </div>
-          <div class="admin-table-wrap">
-            <table class="admin-table">
-              <thead>
-                <tr>
-                  <th>Data</th>
-                  <th>Origem</th>
-                  <th>Nome</th>
-                  <th>WhatsApp</th>
-                  <th>Empresa</th>
-                  <th>E-mail</th>
-                  <th>Interesse</th>
-                  <th>Contexto</th>
-                </tr>
-              </thead>
-              <tbody data-admin-rows></tbody>
-            </table>
-          </div>
-          <p class="admin-empty label" data-admin-empty hidden>Nenhum diagnóstico recebido ainda.</p>
-        </div>
       </div>
     </div>
 

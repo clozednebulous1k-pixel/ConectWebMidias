@@ -4,15 +4,25 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     // Qualquer visitante pode ENVIAR um lead.
-    // Só quem estiver logado (você, no painel) pode LER, EDITAR ou APAGAR.
+    // Só as contas da lista abaixo podem LER, EDITAR ou APAGAR.
     match /leads/{leadId} {
       allow create: if leadValido(request.resource.data);
-      allow read, update, delete: if request.auth != null;
+      allow read, update, delete: if ehAdmin();
     }
 
     // Nada mais no banco fica exposto.
     match /{document=**} {
       allow read, write: if false;
+    }
+
+    // Lista de administradores. Coloque aqui os e-mails criados em
+    // Authentication > Users. Qualquer outra conta, mesmo autenticada,
+    // fica sem acesso aos leads.
+    function ehAdmin() {
+      return request.auth != null
+             && request.auth.token.email in [
+                  'alesilvacardoso01@icloud.com'
+                ];
     }
 
     function leadValido(d) {

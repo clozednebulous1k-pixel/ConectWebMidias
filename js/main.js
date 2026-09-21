@@ -198,7 +198,13 @@ function process() {
       kicker.textContent = item.kicker;
       title.textContent = item.title;
       text.textContent = item.text;
-      out.innerHTML = item.out.map((line) => `<li>${line}</li>`).join("");
+      out.replaceChildren(
+        ...item.out.map((line) => {
+          const li = document.createElement("li");
+          li.textContent = line;
+          return li;
+        })
+      );
     };
 
     if (!booted || reduceMotion) {
@@ -395,9 +401,6 @@ function modals() {
       open("lead");
     });
   });
-  document.querySelectorAll("[data-open-admin]").forEach((btn) => {
-    btn.addEventListener("click", () => open("admin"));
-  });
   document.querySelectorAll("[data-close-modal]").forEach((btn) => {
     btn.addEventListener("click", () => close(btn.closest(".modal")));
   });
@@ -485,101 +488,6 @@ function diagnostic(modal) {
   waBtn?.addEventListener("click", () => submit(true));
 }
 
-function admin() {
-  const formEl = document.querySelector("[data-admin-form]");
-  if (!formEl) return;
-  const login = document.querySelector("[data-admin-login]");
-  const panel = document.querySelector("[data-admin-panel]");
-  const error = document.querySelector("[data-admin-error]");
-  const rows = document.querySelector("[data-admin-rows]");
-  const empty = document.querySelector("[data-admin-empty]");
-  const mode = document.querySelector("[data-admin-mode]");
-  const clearBtn = document.querySelector("[data-admin-clear]");
-
-  let current = [];
-  let unsubscribe = null;
-
-  const cell = (value) => `<td>${String(value ?? "").replace(/[<>]/g, "")}</td>`;
-
-  const render = (leads) => {
-    current = leads;
-    empty.hidden = leads.length > 0;
-    rows.innerHTML = leads
-      .map((lead) => {
-        const when = lead.criadoEm ? new Date(lead.criadoEm).toLocaleString("pt-BR") : "agora";
-        return `<tr>${[
-          when,
-          lead.origem,
-          lead.nome,
-          lead.telefone,
-          lead.empresa,
-          lead.email,
-          lead.secao || lead.frente || lead.sinal,
-          lead.contexto || lead.brief,
-        ]
-          .map(cell)
-          .join("")}</tr>`;
-      })
-      .join("");
-  };
-
-  formEl.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const { user, pass } = Object.fromEntries(new FormData(formEl).entries());
-    const api = await window.LeadsReady;
-    try {
-      await api.login(user, pass);
-    } catch (err) {
-      error.textContent = err?.message?.includes("auth/")
-        ? "Usuário ou senha incorretos."
-        : err.message || "Não foi possível entrar.";
-      error.hidden = false;
-      return;
-    }
-    error.hidden = true;
-    formEl.reset();
-    login.hidden = true;
-    panel.hidden = false;
-    if (mode) {
-      mode.textContent =
-        api.mode === "firebase"
-          ? "Conectado ao Firebase"
-          : "Modo local: os leads ficam salvos só neste navegador";
-    }
-    if (clearBtn) clearBtn.hidden = api.mode === "firebase";
-    unsubscribe?.();
-    unsubscribe = api.subscribe(render);
-  });
-
-  document.querySelector("[data-admin-logout]")?.addEventListener("click", async () => {
-    const api = await window.LeadsReady;
-    await api.logout();
-    unsubscribe?.();
-    unsubscribe = null;
-    panel.hidden = true;
-    login.hidden = false;
-  });
-
-  clearBtn?.addEventListener("click", async () => {
-    if (!window.confirm("Apagar todos os registros salvos neste navegador?")) return;
-    const api = await window.LeadsReady;
-    await api.clear();
-  });
-
-  document.querySelector("[data-admin-csv]")?.addEventListener("click", () => {
-    if (!current.length) return;
-    const cols = ["criadoEm", "origem", "nome", "telefone", "empresa", "email", "secao", "frente", "sinal", "faturamento", "contexto", "brief"];
-    const escape = (v) => `"${String(v ?? "").replace(/"/g, '""')}"`;
-    const csv = [cols.join(";"), ...current.map((l) => cols.map((c) => escape(l[c])).join(";"))].join("\n");
-    const url = URL.createObjectURL(new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8" }));
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `conect-leads-${new Date().toISOString().slice(0, 10)}.csv`;
-    a.click();
-    URL.revokeObjectURL(url);
-  });
-}
-
 function autoflow() {
   const root = document.querySelector("[data-autoflow]");
   if (!root) return;
@@ -634,7 +542,11 @@ function board() {
     const [name, status] = clients[i % clients.length];
     const li = document.createElement("li");
     li.className = "feed-row";
-    li.innerHTML = `<span>${name}</span><span>${status}</span>`;
+    const quem = document.createElement("span");
+    quem.textContent = name;
+    const etapa = document.createElement("span");
+    etapa.textContent = status;
+    li.append(quem, etapa);
     feed.appendChild(li);
     while (feed.children.length > 5) feed.children[1].remove();
     if (!reduceMotion) gsap.from(li, { autoAlpha: 0, x: 12, duration: 0.4 });
@@ -740,7 +652,6 @@ function start() {
   const modal = modals();
   diagnostic(modal);
   quickLead(modal);
-  admin();
   autoflow();
   board();
   flow();

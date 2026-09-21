@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://*.googleapis.com https://www.gstatic.com; base-uri 'self'; form-action 'self'; object-src 'none'"
+    />
+    <title>Painel do administrador | CONECT WEB MÍDIA</title>
+    <link rel="icon" type="image/png" href="./assets/conect-w-limpo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600&family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/admin.css" />
+  </head>
+  <body>
+    <div class="painel-login" data-login>
+      <form class="login-card" data-login-form autocomplete="on">
+        <a class="login-mark" href="./index.html" aria-label="Voltar ao site">
+          <span class="tip" aria-hidden="true"></span>
+          <span class="w">W</span>
+          <span class="tip" aria-hidden="true"></span>
+        </a>
+        <p class="kicker">Área restrita</p>
+        <h1>Painel do administrador</h1>
+
+        <label>
+          <span class="rotulo">E-mail</span>
+          <input type="email" name="email" required autocomplete="username" placeholder="voce@email.com" data-login-email />
+        </label>
+
+        <label>
+          <span class="rotulo">Senha</span>
+          <span class="campo-senha">
+            <input type="password" name="senha" required autocomplete="current-password" placeholder="Sua senha" data-login-pass />
+            <button type="button" class="ver-senha" data-toggle-pass aria-label="Mostrar senha" aria-pressed="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" data-eye-on>
+                <path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
+                <circle cx="12" cy="12" r="3.2" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" data-eye-off hidden>
+                <path d="M2.5 12S6 5.5 12 5.5c1.6 0 3 .45 4.2 1.1M21.5 12S18 18.5 12 18.5c-1.7 0-3.2-.5-4.4-1.2" />
+                <path d="M4 4l16 16" />
+              </svg>
+            </button>
+          </span>
+        </label>
+
+        <label class="lembrar">
+          <input type="checkbox" name="lembrar" data-login-remember checked />
+          <span>Manter conectado neste dispositivo</span>
+        </label>
+
+        <button class="btn" type="submit" data-login-submit>Entrar</button>
+        <p class="erro" data-login-error hidden></p>
+        <p class="aviso" data-login-mode></p>
+        <a class="voltar" href="./index.html">Voltar ao site</a>
+      </form>
+    </div>
+
+    <div class="painel" data-painel hidden>
+      <header class="painel-topo">
+        <div class="painel-marca">
+          <span class="w">W</span>
+          <div>
+            <p class="kicker">CONECT WEB MÍDIA</p>
+            <h1>Leads recebidos</h1>
+          </div>
+        </div>
+        <div class="painel-conta">
+          <p class="conta-email" data-conta></p>
+          <div class="painel-acoes">
+            <a class="btn ghost small" href="./index.html">Ver site</a>
+            <button class="btn ghost small" type="button" data-csv>Baixar CSV</button>
+            <button class="btn small" type="button" data-logout>Sair</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="cartoes">
+        <article><strong data-total>0</strong><span>Total de leads</span></article>
+        <article><strong data-hoje>0</strong><span>Hoje</span></article>
+        <article><strong data-semana>0</strong><span>Últimos 7 dias</span></article>
+        <article><strong data-origem-top>—</strong><span>Origem que mais traz</span></article>
+      </section>
+
+      <section class="filtros">
+        <input type="search" placeholder="Buscar por nome, telefone, e-mail ou interesse" data-busca />
+        <select data-filtro-origem>
+          <option value="">Todas as origens</option>
+        </select>
+        <p class="contagem" data-contagem></p>
+      </section>
+
+      <div class="tabela-area">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>WhatsApp</th>
+              <th>Origem</th>
+              <th>Interesse</th>
+              <th>Empresa</th>
+              <th>E-mail</th>
+              <th>Contexto</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody data-linhas></tbody>
+        </table>
+        <p class="vazio" data-vazio hidden>Nenhum lead ainda. Assim que alguém preencher o formulário, ele aparece aqui na hora.</p>
+        <p class="erro" data-painel-error hidden></p>
+      </div>
+    </div>
+
+    <script src="./js/firebase-config.js"></script>
+    <script type="module" src="./js/leads.js"></script>
+    <script type="module" src="./js/admin.js"></script>
+  </body>
+</html>
