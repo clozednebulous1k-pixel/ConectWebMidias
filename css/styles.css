@@ -624,13 +624,6 @@ textarea {
   font-size: 0.93rem;
 }
 
-.case-take {
-  margin-top: 0.9rem;
-  padding-top: 0.9rem;
-  border-top: 1px solid var(--line);
-  color: var(--ink) !important;
-}
-
 .auto-cta {
   text-align: center;
   display: grid;
